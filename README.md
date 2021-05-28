@@ -1,4 +1,14 @@
 # kafka-docker
+## step 1. launch zookeeper in background
+```
+docker run -d \
+-p 2181:2181 \
+--name zookeeper \
+-m 100M --memory-swap 100M --cpus 0.1 \
+zookeeper
+```
+
+## step 2. launch kafka
 ```
 docker run -it --rm \
 --link zookeeper:zookeeper \
